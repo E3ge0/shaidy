@@ -27,8 +27,9 @@ if (isset($_SESSION['pseudo'])) {
         $titre = $_POST['titreet'];
         $desc = $_POST['descet'];
         $lien = $_POST['lienet'];
-        $req = $bdd->prepare('UPDATE etudes SET titre = ?, description = ?, lien = ?, date = ? WHERE id = ?');
-        $req->execute([$titre, $desc, $lien, date('d/m/Y à H:i:s'), $_GET['idet']]);
+        $cat = $_POST['category'];
+        $req = $bdd->prepare('UPDATE etudes SET titre = ?, description = ?, lien = ?, date = ?, category = ? WHERE id = ?');
+        $req->execute([$titre, $desc, $lien, date('d/m/Y à H:i:s'), $cat, $_GET['idet']]);
     }
 
     if (isset($_POST['titrepod'])) {
@@ -68,8 +69,8 @@ if (isset($_SESSION['pseudo'])) {
     }
 
     if (isset($_POST['content'])) {
-        $req = $bdd->prepare('UPDATE articles SET titre = ?, content = ?, date = ?, category = ?, description = ? WHERE id = ?');
-        $req->execute([$_POST['titre'], $_POST['content'], date('d/m/Y à H:i:s'), $_POST['cat'], $_POST['desc'], $_GET['id']]);
+        $req = $bdd->prepare('UPDATE articles SET titre = ?, content = ?, date = ?, description = ? WHERE id = ?');
+        $req->execute([$_POST['titre'], $_POST['content'], date('d/m/Y à H:i:s'), $_POST['desc'], $_GET['id']]);
     ?>
 <div class="alert alert-success">Changements pris en compte.</div>
 <?php
@@ -180,9 +181,6 @@ if (isset($_SESSION['pseudo'])) {
             <label>Contenu</label>
             <textarea class="form-control" type="text" name="content"
                 id="content"><?php echo $article['content'] ?></textarea>
-            <br>
-            <label>Catégorie</label>
-            <input class="form-control" type="text" name="cat" id="cat" value="<?php echo $article['category'] ?>">
 
             <br>
             <div align="center">
@@ -229,6 +227,9 @@ if (isset($_SESSION['pseudo'])) {
             <label>Titre</label>
             <input class="form-control" type="text" name="titreet" id="titreet" value="<?php echo $etude['titre'] ?>">
             <br>
+            <br>
+            <label>Catégorie</label>
+            <input class="form-control" type="text" name="category" id="category" value="<?php echo $etude['category'] ?>">
             <br>
             <label>Description</label>
             <input class="form-control" type="text" name="descet" id="descet"

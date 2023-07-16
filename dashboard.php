@@ -22,6 +22,7 @@ if (isset($_SESSION['pseudo'])) {
         $titre = $_POST['titretude'];
         $lien = $_POST['lienetude'];
         $desc = $_POST['descetude'];
+        $cat = $_POST['category'];
         if (isset($_FILES['fileetude'])) {
             $tmpName = $_FILES['fileetude']['tmp_name'];
             $name = $_FILES['fileetude']['name'];
@@ -37,8 +38,8 @@ if (isset($_SESSION['pseudo'])) {
                 move_uploaded_file($tmpName, './upload/' . $file);
             }
         }
-        $req = $bdd->prepare('INSERT INTO etudes SET titre = ?, description = ?, image = ?, lien = ?, date = ?');
-        $req->execute([$titre, $desc, $file, $lien, date('d/m/Y à H:i:s')]);
+        $req = $bdd->prepare('INSERT INTO etudes SET titre = ?, description = ?, image = ?, lien = ?, date = ?, category = ?');
+        $req->execute([$titre, $desc, $file, $lien, date('d/m/Y à H:i:s'), $cat]);
         header('Location: dashboard.php');
     }
 
@@ -178,6 +179,7 @@ if (isset($_SESSION['pseudo'])) {
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Titre</th>
+                                <th scope="col">Catégorie</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Lien</th>
                                 <th scope="col">Date</th>
@@ -194,6 +196,7 @@ if (isset($_SESSION['pseudo'])) {
                                 <tr>
                                     <td><?php echo $a['id'] ?></td>
                                     <td><b><?php echo $a['titre'] ?></b></td>
+                                    <td><?php echo $a['category'] ?></td>
                                     <td><?php echo $a['description'] ?></td>
                                     <td><?php echo $a['lien'] ?></td>
                                     <td><?php echo $a['date'] ?></td>
