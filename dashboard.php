@@ -94,7 +94,7 @@ if (isset($_SESSION['pseudo'])) {
 
         $titre = $_POST['titre'];
         $content = $_POST['content'];
-        $cat = $_POST['cat'];
+        // $cat = $_POST['cat'];
         $file = '';
         $desc = $_POST['desc'];
         if (isset($_FILES['file'])) {
@@ -112,8 +112,8 @@ if (isset($_SESSION['pseudo'])) {
                 move_uploaded_file($tmpName, './upload/' . $file);
             }
         }
-        $req = $bdd->prepare('INSERT INTO articles SET titre = ?, content = ?, image = ?, date = ?, description = ?, category = ?');
-        $req->execute([$titre, $content, $file, date('d/m/Y à H:i:s'), $desc, $cat]);
+        $req = $bdd->prepare('INSERT INTO articles SET titre = ?, content = ?, image = ?, date = ?, description = ?');
+        $req->execute([$titre, $content, $file, date('d/m/Y à H:i:s'), $desc]);
         header('Location: dashboard.php');
     }
 ?>
@@ -148,7 +148,6 @@ if (isset($_SESSION['pseudo'])) {
                                 <th scope="col">#</th>
                                 <th scope="col">Titre</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Catégorie</th>
                                 <th scope="col">Date</th>
                                 <th scope="col"></th>
                             </tr>
@@ -164,7 +163,6 @@ if (isset($_SESSION['pseudo'])) {
                                     <td><?php echo $a['id'] ?></td>
                                     <td><b><?php echo $a['titre'] ?></b></td>
                                     <td><?php echo $a['description'] ?></td>
-                                    <td><?php echo $a['category'] ?></td>
                                     <td><?php echo $a['date'] ?></td>
                                     <td><a href="modify.php?id=<?php echo $a['id'] ?>" style="text-decoration: none;">✏️</a> <a href="?del=<?php echo $a['id'] ?>" style="text-decoration: none;">🗑️</a></td>
                                 </tr>
@@ -285,7 +283,7 @@ if (isset($_SESSION['pseudo'])) {
                     <div style="margin-left: 3%; margin-right: 3%">
                         <form method="post" enctype="multipart/form-data">
                             <input class="form-control" type="text" id="titre" name="titre" placeholder="Titre de l'article" required><br>
-                            <input type="text" name="cat" id="cat" placeholder="Catégorie" class="form-control" required><br>
+
                             <input type="text" name="desc" id="desc" placeholder="Brève description" class="form-control" required><br>
                             <textarea class="form-control" type="text" id="content" name="content" placeholder="Contenu de l'article" required></textarea><br>
                             <input class="form-control" type="file" id="file" name="file" required><br><br>
@@ -296,6 +294,7 @@ if (isset($_SESSION['pseudo'])) {
                     <div style="margin-left: 3%; margin-right: 3%">
                         <form method="post" enctype="multipart/form-data">
                             <input class="form-control" type="text" id="titretude" name="titretude" placeholder="Titre de l'étude" required><br>
+                            <input type="text" name="cat" id="cat" placeholder="Catégorie" class="form-control" required><br>
                             <input type="text" name="descetude" id="descetude" placeholder="Brève description" class="form-control" required><br>
                             <input class="form-control" type="text" id="lienetude" name="lienetude" placeholder="Lien de l'étude" required><br>
                             <input class="form-control" type="file" id="fileetude" name="fileetude" required><br><br>

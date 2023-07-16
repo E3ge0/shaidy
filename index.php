@@ -135,7 +135,6 @@
     <div id="mySidenav" class="sidenav">
         <a id="closeBtn" href="#" class="close"></a>
         <ul>
-            <li>AHAHAHH</li>
             <li><a href="etudes.php">Studies</a></li>
             <li><a href="api.php">API</a></li>
             <li><a href="podcasts.php">Podcasts</a></li>
