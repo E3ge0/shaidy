@@ -120,6 +120,13 @@
         z-index: 3;
         opacity: 1;
     }
+
+    .title-carroussel {
+        white-space: nowrap; /* Empêche le texte de passer à la ligne */
+      overflow: hidden; /* Masque le contenu débordant */
+      text-overflow: ellipsis; /* Ajoute des points de suspension à la fin */
+      width: 100%;
+    }
     </style>
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -196,10 +203,9 @@ SHAI'DY
         background-repeat: no-repeat;">
                             <div style="position: absolute; bottom: 0; left: 0; right: 0" align="center">
 
-                                <h2 style="font-size: 40px; color: white">
+                                <h2 style="font-size: 40px; color: white" class="title-carroussel">
                                     <?php echo $a1['titre'] ?></h2>
                             </div>
-
                             <a class="arrow arrow-prev" href="#item-3"></a>
                             <a class="arrow arrow-next" href="#item-2"></a>
                         </div>
@@ -216,7 +222,7 @@ SHAI'DY
         background-repeat: no-repeat;">
                             <div style="position: absolute; bottom: 0; left: 0; right: 0" align="center">
 
-                                <h2 style="font-size: 40px; color: white">
+                                <h2 style="font-size: 40px; color: white" class="title-carroussel"</h2>
                                     <?php echo $a2['titre'] ?></h2>
                             </div>
 
@@ -234,7 +240,7 @@ SHAI'DY
         background-repeat: no-repeat;">
                             <div style="position: absolute; bottom: 0; left: 0; right: 0" align="center">
 
-                                <h2 style="font-size: 40px; color: white">
+                                <h2 style="font-size: 40px; color: white" class="title-carroussel">
                                     <?php echo $a3['titre'] ?></h2>
                             </div>
 
