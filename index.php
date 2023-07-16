@@ -126,7 +126,7 @@
       overflow: hidden; /* Masque le contenu débordant */
       text-overflow: ellipsis; /* Ajoute des points de suspension à la fin */
       width: 100%;
-      color: red
+      color: red;
     }
     </style>
     <link rel="stylesheet" href="css/app.css">
