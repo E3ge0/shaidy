@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("css/Poppins.ttf") format("truetype");
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  /* background: linear-gradient(45deg, #2c65f5, #8dacfa); */
+  /* background: linear-gradient(to right, #2c65f5, #8dacfa); */
+}
+
+.burger-icon {
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.burger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.burger-line:nth-child(1) {
+  top: 0;
+  transition-delay: 0.1s;
+}
+
+.burger-line:nth-child(2) {
+  top: 8px;
+  transition-delay: 0.2s;
+}
+
+.burger-line:nth-child(3) {
+  top: 16px;
+  transition-delay: 0.3s;
+}
+
+.burger-icon.active .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-icon.active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-icon.active .burger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Sidenav menu */
+.sidenav {
+  height: auto;
+  /* border-radius: 20px; */
+  width: 250px;
+  position: fixed;
+  z-index: 99;
+  top: 77px;
+  right: -250px;
+  padding: 10px;
+  /* Modification : position à droite */
+  background-color: #e6e6e6;
+  transition: right 0.5s ease;
+  /* Modification : transition à droite */
+}
+
+/* Sidenav menu links */
+.sidenav a {
+  padding: 20px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #111;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Active class */
+.sidenav.active {
+  right: 20px;
+  /* Modification : position à droite */
+}
+
+/* Close btn */
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  /* Modification : position à gauche */
+  font-size: 36px;
+}
+
+/* Icône burger */
+.burger-icon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}

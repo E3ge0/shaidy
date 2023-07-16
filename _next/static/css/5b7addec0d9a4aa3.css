@@ -1,0 +1,89 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  width: 100%;
+  background: #fff;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Axis;
+  src: url(../media/AXIS-ExtraBold.4f1437e2.otf);
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../media/Roboto-Light.a05a86de.ttf);
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../media/Roboto-Regular.298c1099.ttf);
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../media/Roboto-Medium.8ca80686.ttf);
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../media/Roboto-Bold.8840acc7.ttf);
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../media/Montserrat-Black.58d78c9d.ttf);
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../media/Montserrat-Bold.69bcaec0.ttf);
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../media/Montserrat-SemiBold.8b46d63e.ttf);
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../media/Montserrat-Medium.9abd22de.ttf);
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../media/Montserrat-Regular.34b95a22.ttf);
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../media/Montserrat-Light.4cbad113.ttf);
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../media/Montserrat-Thin.25f6ce32.ttf);
+  font-weight: 100;
+  font-display: swap;
+}
