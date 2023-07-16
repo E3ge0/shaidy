@@ -140,7 +140,7 @@ SHAI'DY
                                 $etudes = $req->fetchAll();
                                 foreach ($etudes as $a) {
                         ?>
-                        <a href="read.php?i=<?php echo $a['id'] ?>"
+                        <a href="<?php echo $a['link'] ?>"
                             class="PostCardPreview__Container-sc-1j4wnl5-0 eQyRpe">
                             <div class="PostCardPreview__ImgContainer-sc-1j4wnl5-1 eDeQuS"><span
                                     style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"><img
