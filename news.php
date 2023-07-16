@@ -107,26 +107,6 @@ SHAI'DY
             <div class="blog__Container-sc-1r9k7f4-0 fqkZaR">
                 <div class="blog__HeaderContainer-sc-1r9k7f4-1 gpJXD">
                     <h1 class="blog__SectionTitle-sc-1r9k7f4-2 IFQoh">News</h1>
-                    <div class="BlogCategorySelector__SelectorContainer-sc-ghsvil-0 rJEyo"><select
-                            id="select-blog-category" class="BlogCategorySelector__Select-sc-ghsvil-1 gUrpat no-zoom">
-                            <?php
-
-                            $req = $bdd->prepare('SELECT DISTINCT category FROM articles ORDER BY category');
-                            $req->execute();
-                            $categories = $req->fetchAll();
-                            ?>
-                            <option value=""></option>
-                            <option value="all">Toutes les catégories</option>
-                            <?php
-                            foreach ($categories as $c) {
-                            ?>
-                            <option value="<?php echo $c[0] ?>"><?php echo $c[0] ?></option>
-                            <?php
-                            }
-                            ?>
-
-
-                        </select></div>
                 </div>
                 <section class="AllPosts__Section-sc-6aropc-0 kcFeoT">
 
