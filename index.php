@@ -122,11 +122,12 @@
     }
 
     .title-carroussel {
-        white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
       overflow: hidden; /* Masque le contenu débordant */
       text-overflow: ellipsis; /* Ajoute des points de suspension à la fin */
       width: 100%;
-    }s
+      color: red
+    }
     </style>
     <link rel="stylesheet" href="css/app.css">
 </head>
