@@ -107,11 +107,11 @@ SHAI'DY
             <div class="blog__Container-sc-1r9k7f4-0 fqkZaR">
                 <div class="blog__HeaderContainer-sc-1r9k7f4-1 gpJXD">
                     <h1 class="blog__SectionTitle-sc-1r9k7f4-2 IFQoh">Studies</h1>
-                    <!-- <div class="BlogCategorySelector__SelectorContainer-sc-ghsvil-0 rJEyo"><select
+                    <div class="BlogCategorySelector__SelectorContainer-sc-ghsvil-0 rJEyo"><select
                             id="select-blog-category" class="BlogCategorySelector__Select-sc-ghsvil-1 gUrpat no-zoom">
                             <?php
 
-                            $req = $bdd->prepare('SELECT DISTINCT category FROM articles ORDER BY category');
+                            $req = $bdd->prepare('SELECT DISTINCT category FROM etudes ORDER BY category');
                             $req->execute();
                             $categories = $req->fetchAll();
                             ?>
@@ -126,7 +126,7 @@ SHAI'DY
                             ?>
 
 
-                        </select></div> -->
+                        </select></div>
                 </div>
                 <section class="AllPosts__Section-sc-6aropc-0 kcFeoT">
 
@@ -157,10 +157,10 @@ SHAI'DY
                                     <p class="PostCardPreview__MetaText-sc-1j4wnl5-6 fAwCOA"><?php echo $a['date'] ?>
                                     </p>
                                     <div class="PostCardPreview__PointSeparator-sc-1j4wnl5-7 isseNH"></div>
-                                    <!-- <div class="PostCategories__CategoriesContainer-sc-1mmlc33-0 ktHVET">
+                                    <div class="PostCategories__CategoriesContainer-sc-1mmlc33-0 ktHVET">
                                         <div class="CategoryTag__CategoryUnclicable-sc-h38akm-1 kUSwnk">
                                             <?php echo $a['category'] ?></div>
-                                    </div> -->
+                                    </div>
                                 </div>
                             </div>
                         </a>
