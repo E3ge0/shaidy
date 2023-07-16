@@ -133,12 +133,15 @@ SHAI'DY
                     <div class="AllPosts__Container-sc-6aropc-1 hsgcUN">
 
                         <?php
-                        $req = $bdd->prepare('SELECT * FROM etudes ORDER BY id DESC');
-                        $req->execute([]);
-                        $etudes = $req->fetchAll();
-                        foreach ($etudes as $a) {
+                        if (isset($_GET['category'])) {
+                            if ($_GET['category'] == 'all') {
+                                $req = $bdd->prepare('SELECT * FROM etudes ORDER BY id DESC');
+                                $req->execute([]);
+                                $etudes = $req->fetchAll();
+                                foreach ($etudes as $a) {
                         ?>
-                        <a href="<?php echo $a['lien'] ?>" class="PostCardPreview__Container-sc-1j4wnl5-0 eQyRpe">
+                        <a href="read.php?i=<?php echo $a['id'] ?>"
+                            class="PostCardPreview__Container-sc-1j4wnl5-0 eQyRpe">
                             <div class="PostCardPreview__ImgContainer-sc-1j4wnl5-1 eDeQuS"><span
                                     style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"><img
                                         src="upload/<?php echo $a['image'] ?>" decoding="async" data-nimg="fill"
@@ -164,7 +167,80 @@ SHAI'DY
                                 </div>
                             </div>
                         </a>
-                        <?php } ?>
+                        <?php
+                                }
+                            } else {
+                                $req = $bdd->prepare('SELECT * FROM etudes WHERE category = ? ORDER BY id DESC');
+                                $req->execute([htmlspecialchars($_GET['category'])]);
+                                $etudes = $req->fetchAll();
+                                foreach ($etudes as $a) {
+                                ?>
+                        <a href="read.php?i=<?php echo $a['id'] ?>"
+                            class="PostCardPreview__Container-sc-1j4wnl5-0 eQyRpe">
+                            <div class="PostCardPreview__ImgContainer-sc-1j4wnl5-1 eDeQuS"><span
+                                    style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"><img
+                                        src="upload/<?php echo $a['image'] ?>" decoding="async" data-nimg="fill"
+                                        class="image"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover;background-size:cover;background-position:0% 0%" /><noscript><img
+                                            sizes="100vw" decoding="async" data-nimg="fill"
+                                            style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover"
+                                            class="image" loading="lazy" /></noscript></span></div>
+                            <div class="PostCardPreview__ContentContainer-sc-1j4wnl5-2 dTiUBv">
+                                <h2 class="PostCardPreview__PostTitleH2-sc-1j4wnl5-3 iWPezH"><?php echo $a['titre'] ?>
+                                </h2>
+                                <p class="PostCardPreview__PostDescription-sc-1j4wnl5-5 dddMdo">
+                                    <?php echo $a['description'] ?>
+                                </p>
+                                <div style="display:flex;align-items:center;margin-top:12px">
+                                    <p class="PostCardPreview__MetaText-sc-1j4wnl5-6 fAwCOA"><?php echo $a['date'] ?>
+                                    </p>
+                                    <div class="PostCardPreview__PointSeparator-sc-1j4wnl5-7 isseNH"></div>
+                                    <div class="PostCategories__CategoriesContainer-sc-1mmlc33-0 ktHVET">
+                                        <div class="CategoryTag__CategoryUnclicable-sc-h38akm-1 kUSwnk">
+                                            <?php echo $a['category'] ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <?php
+                                }
+                            }
+                        } else {
+                            $req = $bdd->prepare('SELECT * FROM etudes ORDER BY id DESC');
+                            $req->execute([]);
+                            $etudes = $req->fetchAll();
+                            foreach ($etudes as $a) {
+                                ?>
+                        <a href="read.php?i=<?php echo $a['id'] ?>"
+                            class="PostCardPreview__Container-sc-1j4wnl5-0 eQyRpe">
+                            <div class="PostCardPreview__ImgContainer-sc-1j4wnl5-1 eDeQuS"><span
+                                    style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"><img
+                                        src="upload/<?php echo $a['image'] ?>" decoding="async" data-nimg="fill"
+                                        class="image"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover;background-size:cover;background-position:0% 0%" /><noscript><img
+                                            sizes="100vw" decoding="async" data-nimg="fill"
+                                            style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover"
+                                            class="image" loading="lazy" /></noscript></span></div>
+                            <div class="PostCardPreview__ContentContainer-sc-1j4wnl5-2 dTiUBv">
+                                <h2 class="PostCardPreview__PostTitleH2-sc-1j4wnl5-3 iWPezH"><?php echo $a['titre'] ?>
+                                </h2>
+                                <p class="PostCardPreview__PostDescription-sc-1j4wnl5-5 dddMdo">
+                                    <?php echo $a['description'] ?>
+                                </p>
+                                <div style="display:flex;align-items:center;margin-top:12px">
+                                    <p class="PostCardPreview__MetaText-sc-1j4wnl5-6 fAwCOA"><?php echo $a['date'] ?>
+                                    </p>
+                                    <div class="PostCardPreview__PointSeparator-sc-1j4wnl5-7 isseNH"></div>
+                                    <div class="PostCategories__CategoriesContainer-sc-1mmlc33-0 ktHVET">
+                                        <div class="CategoryTag__CategoryUnclicable-sc-h38akm-1 kUSwnk">
+                                            <?php echo $a['category'] ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <?php
+                            }
+                        } ?>
 
 
                     </div>
@@ -180,7 +256,7 @@ SHAI'DY
         var selectedValue = selectElement.value;
 
         // Redirection vers une autre page avec le paramètre GET
-        window.location.href = 'news.php?category=' + selectedValue;
+        window.location.href = 'etudes.php?category=' + selectedValue;
     });
     </script>
     <script src="inc/burger-menu.js"></script>
