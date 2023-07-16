@@ -221,6 +221,7 @@ if (isset($_SESSION['pseudo'])) {
             $etude = $req->fetch();
 
 ?><br>
+<!--  -->
 <h2 align="center">Modification étude</h1>
     <div style="margin: 9%">
         <form method="post">
