@@ -126,7 +126,6 @@
       overflow: hidden; /* Masque le contenu débordant */
       text-overflow: ellipsis; /* Ajoute des points de suspension à la fin */
       width: 100%;
-      color: red;
     }
     </style>
     <link rel="stylesheet" href="css/app.css">
@@ -136,6 +135,7 @@
     <div id="mySidenav" class="sidenav">
         <a id="closeBtn" href="#" class="close"></a>
         <ul>
+            <li>AHAHAHH</li>
             <li><a href="etudes.php">Studies</a></li>
             <li><a href="api.php">API</a></li>
             <li><a href="podcasts.php">Podcasts</a></li>
