@@ -124,10 +124,10 @@ $podcast = $req->fetch();
         <h3>You might also like</h3>
     </div>
     <div style="overflow-y: auto; padding-top: 20px; padding: 20px">
-        <div class="game-card" onclick="window.location.href='read.php?i=<?php echo $news['id'] ?>'">
+        <!-- <div class="game-card" onclick="window.location.href='read.php?i=<?php echo $news['id'] ?>'">
             <p><?php echo $news['titre'] ?></p>
             <img src="upload/<?php echo $news['image'] ?>">
-        </div>
+        </div> -->
         <div class="game-card" onclick="window.location.href='<?php echo $etude['lien'] ?>'">
             <p><?php echo $etude['titre'] ?></p>
             <img src="upload/<?php echo $etude['image'] ?>">
