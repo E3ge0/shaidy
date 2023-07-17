@@ -153,15 +153,15 @@ SHAI'DY
                                 <p class="PostCardPreview__PostDescription-sc-1j4wnl5-5 dddMdo">
                                     <?php echo $a['description'] ?>
                                 </p>
-                                <div style="display:flex;align-items:center;margin-top:12px">
+                                <!-- <div style="display:flex;align-items:center;margin-top:12px">
                                     <p class="PostCardPreview__MetaText-sc-1j4wnl5-6 fAwCOA"><?php echo $a['date'] ?>
                                     </p>
                                     <div class="PostCardPreview__PointSeparator-sc-1j4wnl5-7 isseNH"></div>
-                                    <!-- <div class="PostCategories__CategoriesContainer-sc-1mmlc33-0 ktHVET">
+                                    <div class="PostCategories__CategoriesContainer-sc-1mmlc33-0 ktHVET">
                                         <div class="CategoryTag__CategoryUnclicable-sc-h38akm-1 kUSwnk">
                                             <?php echo $a['category'] ?></div>
-                                    </div> -->
-                                </div>
+                                    </div>
+                                </div> -->
                             </div>
                         </a>
                         <?php } ?>
