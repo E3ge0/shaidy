@@ -297,7 +297,7 @@ if (isset($_SESSION['pseudo'])) {
                     <div style="margin-left: 3%; margin-right: 3%">
                         <form method="post" enctype="multipart/form-data">
                             <input class="form-control" type="text" id="titretude" name="titretude" placeholder="Titre de l'étude" required><br>
-                            <input type="text" name="cat" id="cat" placeholder="Catégorie" class="form-control" required><br>
+                            <input type="text" name="category" id="category" placeholder="Catégorie" class="form-control" required><br>
                             <input type="text" name="descetude" id="descetude" placeholder="Brève description" class="form-control" required><br>
                             <input class="form-control" type="text" id="lienetude" name="lienetude" placeholder="Lien de l'étude" required><br>
                             <input class="form-control" type="file" id="fileetude" name="fileetude" required><br><br>
